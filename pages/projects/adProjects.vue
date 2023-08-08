@@ -11,7 +11,7 @@
             <h2 class="card-title">proyecto1</h2>
             <p>poryectoooooooooo</p>
             <div class="card-actions justify-end">
-                <button class="btn btn-primary" @click="$router.push('/projects/adProjects')">edit</button>
+                <button class="btn btn-primary" @click="$router.push('/eachProjects/adEachProjects')">edit</button>
             </div>
         </div>
     </div>
@@ -22,7 +22,7 @@
             <h2 class="card-title">proyecto2</h2>
             <p>poryectoooooooooo</p>
             <div class="card-actions justify-end">
-                <button class="btn btn-primary" @click="$router.push('/projects/adProjects')">edit</button>
+                <button class="btn btn-primary" @click="$router.push('/eachProjects/adEachProjects')">edit</button>
             </div>
         </div>
     </div>
@@ -33,7 +33,7 @@
             <h2 class="card-title">proyecto3</h2>
             <p>poryectoooooooooo</p>
             <div class="card-actions justify-end">
-                <button class="btn btn-primary" @click="$router.push('/projects/adProjects')">edit</button>
+                <button class="btn btn-primary" @click="$router.push('/eachProjects/adEachProjects')">edit</button>
             </div>
         </div>
     </div>
@@ -44,7 +44,7 @@
             <h2 class="card-title">proyecto4</h2>
             <p>poryectoooooooooo</p>
             <div class="card-actions justify-end">
-                <button class="btn btn-primary" @click="$router.push('/projects/adProjects')">edit</button>
+                <button class="btn btn-primary" @click="$router.push('/eachProjects/adEachProjects')">edit</button>
             </div>
         </div>
     </div>
