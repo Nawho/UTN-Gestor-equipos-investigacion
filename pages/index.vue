@@ -29,7 +29,4 @@ import { MyAuthClient, auth0LoginWithPopup } from '../middleware/auth';
 
 
 <style>
-.main {
-    
-}
 </style>
