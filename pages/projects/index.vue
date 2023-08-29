@@ -1,7 +1,8 @@
 <template>
     <div>
-        <h2 class="text-center font-sans text-2xl">Proyectos del grupo Gemis</h2>
-        <br>
+        <div class="flex justify-center mb-8">
+            <img class="h-16" @click="$router.push('../homePage')" src="/imgs/gemis.png" alt="">
+        </div>
         <div class="flex justify-around">
             <div>
                 <button class="btn btn-primary" @click="$router.push('../homePage')">home page</button>
