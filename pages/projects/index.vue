@@ -19,6 +19,9 @@
         </div>
     </div>
     <br>
+    <div class="flex justify-end my-4 mr-44">
+        <button class="btn btn-secondary" @click="$router.push('projects/newProj')">agregar proyecto</button>
+    </div>
     <div class="flex justify-center" v-for="n in 5">
         <div class="card card-side w-3/4 border-4 border-indigo-500/75 mb-8">
             <div class="flex">

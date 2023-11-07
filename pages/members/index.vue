@@ -19,8 +19,11 @@
         </div>
     </div>
     <br>
+    <div class="flex justify-end my-4 mr-44">
+        <button class="btn btn-secondary" @click="$router.push('members/newMemb')">agregar miembro</button>
+    </div>
     <div class="mb-6 flex flex-wrap justify-center" >
-        <div class="card w-56 h-96 border-4 border-indigo-500/75 m-4" v-for="n in 8">
+        <div class="card w-56 h-96 border-4 border-indigo-500/75 m-4" v-for="n in 6">
             <div class="avatar flex justify-center mt-8">
                 <div class="w-32 rounded-full ring ring-indigo-500/75 ring-offset-base-100 ring-offset-2">
                     <img src="../../imgs/mrchedda.png" />
