@@ -48,7 +48,7 @@ interface project{
     
 }
 
-const a = await $fetch('http://localhost:3009/grupo_investigacion').catch((err) => {
+const a = await $fetch('http://localhost:3030/grupo_investigacion').catch((err) => {
     console.error(err.data)
 })
 let projectsID:string[]=[]
@@ -72,7 +72,7 @@ a.forEach(x => {
 });;
 projectsID.forEach( async (x)=>{
 
-    let activity =await $fetch('http://localhost:3009/actividad/'+x) as project 
+    let activity =await $fetch('http://localhost:3030/actividad/'+x) as project 
     console.log(activity);
     
     projectos.value.push( activity )

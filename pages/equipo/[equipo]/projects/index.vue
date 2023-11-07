@@ -47,7 +47,7 @@ interface project{
     
 }
 
-const a = await $fetch('http://localhost:3009/grupo_investigacion').catch((err) => {
+const a = await $fetch('http://localhost:3030/grupo_investigacion').catch((err) => {
     console.error(err.data)
 })
 

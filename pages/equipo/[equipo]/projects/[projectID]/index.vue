@@ -85,7 +85,7 @@
               </td>
               <td>juansito123@gmail.com</td>
               <th>
-                <button class="btn btn-ghost btn-xs">details</button>
+                <button class="btn btn-ghost btn-xs" @click="$router.push($router.currentRoute.value.fullPath+'/user/juansito123@gmail.com')" >details</button>
               </th>
             </tr>
             <!-- row 2 -->
