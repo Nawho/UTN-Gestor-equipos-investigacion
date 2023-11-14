@@ -27,7 +27,7 @@
                     <div class="badge badge-outline">{{ n.asistencia }}</div>
                     <p>{{ n.descripcionCorta }}</p>
                     <div class="card-actions justify-end">
-                        <button class="btn btn-primary">edit</button>
+                        <button class="btn btn-primary" @click="$router.push('activities/'+n._id+'/editActiv')">edit</button>
                     </div>
                 </div>
             </div>
@@ -72,7 +72,7 @@ a.forEach(x => {
 });;
 projectsID.forEach( async (x)=>{
 
-    let activity =await $fetch('http://localhost:3030/actividad/'+x) as project 
+    const activity =await $fetch('http://localhost:3030/actividad/'+x) as project 
     console.log(activity);
     
     projectos.value.push( activity )

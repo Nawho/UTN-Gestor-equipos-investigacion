@@ -9,8 +9,8 @@
         <div id="userImage" class="flex justify-center"> <div class="avatar online md:h-[240px] md:w-[240px] sm:h-[200px] sm:w-[200px] h-[160px] w-[160px]"><img class="rounded-full ring ring-primary ring-offset-base-100 ring-offset-2" src="https://avatars.githubusercontent.com/u/82118333?v=4" alt="User Image"></div></div>
         <div id="userInfo" class="ml-6">
             <ul class="mt-2 sm:ml-6 md:ml-12">
-                <h1 class="text-3xl font-bold mb-3">Erling Halland</h1>
-                <h1 class="text-xl">Halland@gmail.com</h1>
+                <h1 class="text-3xl font-bold mb-3">{{ dats.nombre }} {{ dats.apellido }}</h1>
+                <h1 class="text-xl">{{ dats.mail }}</h1>
             </ul>
         <div id="userProjects" class="card bg-gray-900 p-3 mt-4 sm:ml-6 md:ml-12">
             <ul class="flex flex-col  lg:grid lg:grid-cols-2 gap-5">
@@ -63,3 +63,12 @@
 
 </template>
 
+
+<script setup>
+const {user} = useRoute().params;
+const dats = ref({"nombre":"","apellido":"","mail":"","password":"","img":""})
+dats.value = await $fetch('http://localhost:3030/user/'+user    ).catch((err) => {
+    console.error(err.data)
+})
+console.log(dats);
+</script>

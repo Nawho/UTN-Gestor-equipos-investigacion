@@ -20,17 +20,18 @@
     </div>
     <br>
     <div class="mb-6 flex flex-wrap justify-center" >
-        <div class="card w-56 h-96 border-4 border-indigo-500/75 m-4" v-for="n in 8">
+        <div class="card w-56 h-96 border-4 border-indigo-500/75 m-4" v-for="n in usrs">
             <div class="avatar flex justify-center mt-8">
                 <div class="w-32 rounded-full ring ring-indigo-500/75 ring-offset-base-100 ring-offset-2">
                     <img src="/imgs/mrchedda.png" />
                 </div>  
             </div>
             <div class="card-body items-center text-center">
-                <h2 class="card-title">Mr. Chedda</h2>
-                <p>una breve descripcion de Mr. Chedda</p>
+                <h2 class="card-title">{{n.nombre}} {{ n.apellido }}</h2>
+                <p>{{n.mail}}</p>
                 <div class="card-actions">
-                    <button class="btn btn-primary">More</button>
+                    <button class="btn btn-primary" @click="$router.push('/user/'+n._id)" > More </button>
+                    
                 </div>
             </div>
         </div>
@@ -39,6 +40,26 @@
 
 <script setup>
 const {equipo} = useRoute().params;
+const a = await $fetch('http://localhost:3030/grupo_investigacion/').catch((err) => {
+    console.error(err.data)
+})
+
+let e;
+a.forEach(element => {
+    if(element.nombre == equipo){
+        e=element;
+    }    
+});
+console.log(e);
+const usrs=ref([])
+
+await e.integrantes.forEach(async element => {
+    const x  = await $fetch('http://localhost:3030/user/'+element).catch((err) => {
+    console.error(err.data)
+})
+  usrs.value.push(x);    
+}) ;
+console.log(usrs);
 </script>
 
 <style ></style>

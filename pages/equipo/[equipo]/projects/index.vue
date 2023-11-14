@@ -51,14 +51,16 @@ const a = await $fetch('http://localhost:3030/grupo_investigacion').catch((err) 
     console.error(err.data)
 })
 
-let projectos:project[] = []
+const projectos=ref([])
 
-a.forEach(x => {
+a.forEach(async x => {
     console.log(x.nombre);
     if(x.nombre == equipo ){ 
         console.log(x._id);
-        x.proyectos.forEach(y => {
-            projectos.push(y);
+        x.proyectos.forEach(async y => {
+            console.log(y);
+            
+            projectos.value.push( await $fetch('http://localhost:3030/proyecto/'+y) );
         });
         
      }
@@ -70,3 +72,5 @@ a.forEach(x => {
 
 </script>
 <style></style>
+
+
